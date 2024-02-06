@@ -1,3 +1,4 @@
 vendor/
 /src/View/cache/
 composer.lock
+.idea/
