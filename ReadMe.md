@@ -13,7 +13,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 1. Clonez ce dépôt Git sur votre machine locale:
 
     ```shell
-    git clone <lien du dépôt>
+    git clone https://github.com/YhannD/softway_medical.git
     ```
 
 2. Accédez au répertoire de votre application:
@@ -23,6 +23,10 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
     ```
 
 3. Utilisez Docker Compose pour créer et exécuter les conteneurs Docker:
+4. 
+   ```shell
+   docker-compose build
+    ```
 
     ```shell
     docker-compose up -d
@@ -33,16 +37,16 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 4. Installez les dépendances PHP en exécutant Composer dans le conteneur PHP:
 
     ```shell
-    docker-compose exec php composer install
+    docker-compose exec php composer install -d /var/www/softway_medical
     ```
 
 **Installation de la Base de Données**
 
 Pour installer la base de données, exécutez le script datas.sql situé dans le dossier `migrations` avec phpMyAdmin par exemple ou bien dans le terminal avec Docker.
 
-    ```shell
-    docker-compose exec database mysql -uroot -proot SoftwayDB
-    ```
+   ```shell
+   docker-compose exec database mysql -uroot -proot SoftwayDB
+   ```
 
 Puis une fois dans MySQL, copiez/collez le script datas.sql.
 
