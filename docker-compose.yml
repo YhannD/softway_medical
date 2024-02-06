@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  php:
+    image: php:8.3-apache
+    container_name: php83Apache
+    ports:
+      - '8000:80'
+    volumes:
+      - ./:/var/www/softway_medical
+    build:
+      context: .
+      dockerfile: DockerFile
+    working_dir: /var/www/softway_medical/public
+  database:
+    image: 'mysql:5.7'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: SoftwayDB
+    ports:
+      - '3306:3306'

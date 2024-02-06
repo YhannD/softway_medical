@@ -1,0 +1,9 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# If the request is for a real file (like an image or a script), don't rewrite the URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php
+RewriteRule ^ index.php [QSA,L]
